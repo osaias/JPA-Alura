@@ -50,4 +50,10 @@ public class Conta {
 	}
 
 
+	@Override
+	public String toString() {
+
+		return "Titular: " + this.titular + "\n" +
+		"Conta: " + this.agencia + " " + this.numero + " " + this.banco;
+	}
 }
