@@ -6,8 +6,10 @@
 	<persistence-unit name="jpa_alura">
 		<!-- Implementação do JPA, no nosso caso Hibernate -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
 		<!-- Aqui são listadas todas as entidades -->
 		<class>br.com.alura.jpa_alura.modelo.Conta</class>
+		<class>br.com.alura.jpa_alura.modelo.Movimentacao</class>
 		<properties>
 			<!-- Propriedades JDBC -->
 			<property name="javax.persistence.jdbc.driver"
