@@ -11,8 +11,17 @@ public class Categoria {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String nome;
+
+	@Deprecated
+	public Categoria() {
+		
+	}
+
+	public Categoria(String nome) {
+		this.nome = nome;
+	}
 
 	public int getId() {
 		return id;
@@ -25,10 +34,10 @@ public class Categoria {
 	public String getNome() {
 		return nome;
 	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "ID: " + id + " NOME: " + nome;
 	}
-	
-	
 }

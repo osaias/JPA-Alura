@@ -1,6 +1,8 @@
 package br.com.alura.jpa_alura.modelo;
 
 import java.math.BigDecimal;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.List;
 
@@ -38,6 +40,14 @@ public class Movimentacao {
 	@ManyToMany
 	private List<Categoria> categorias;
 	
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
+
 	public Conta getConta() {
 		return conta;
 	}
@@ -85,5 +95,20 @@ public class Movimentacao {
 		this.data = data;
 	}
 
+	public String getDataFormatada() {
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
+                .withZone(ZoneOffset.UTC);
+        String data = formatter.format(this.data.toInstant());
+        
+		return data;
+	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "ID: " + id + " DESCRIÇÃO: " + descricao + 
+				" TIPO: " + tipo + " VALOR: " + valor + 
+				" DATA: " + getDataFormatada() +" CATEGORIAS: " + categorias;
+	}
 }

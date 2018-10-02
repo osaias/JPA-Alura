@@ -7,13 +7,19 @@ import javax.persistence.Persistence;
 public class JPAUtil {
 
 	private static EntityManager manager;
+	private static EntityManagerFactory factory;
 	
 	public static EntityManager getEntityManager(String persistenceUnit) {
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory(persistenceUnit);
+		factory = Persistence.createEntityManagerFactory(persistenceUnit);
 	
 		manager = factory.createEntityManager();
 		
 		return manager;
+	}
+	
+	public static EntityManagerFactory getFactory() {
+		
+		return factory;
 	}
 }

@@ -1,5 +1,7 @@
 package br.com.alura.jpa_alura.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +18,16 @@ public class Conta {
 	private String agencia;
 	private String banco;
 	private String titular;
+	
+	private List<Conta> movimentacoes;
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public String getTitular() {
 		return titular;

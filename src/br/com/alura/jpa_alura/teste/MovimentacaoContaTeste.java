@@ -10,7 +10,7 @@ import br.com.alura.jpa_alura.modelo.Movimentacao;
 import br.com.alura.jpa_alura.modelo.TipoMovimentacao;
 import br.com.alura.jpa_alura.util.JPAUtil;
 
-public class MovimentacaoTeste {
+public class MovimentacaoContaTeste {
 
 	public static void main(String[] args) {
 
@@ -53,10 +53,7 @@ public class MovimentacaoTeste {
 		manager.persist(mov);
 		manager.getTransaction().commit();
 		manager.close();
-		
-		
-		
-		
+
 	}
 
 }
