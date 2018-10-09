@@ -10,7 +10,7 @@ import br.com.alura.jpa_alura.modelo.Conta;
 import br.com.alura.jpa_alura.modelo.Movimentacao;
 import br.com.alura.jpa_alura.util.JPAUtil;
 
-public class TesteJPQL {
+public class JPQLTeste {
 
 	public static void main(String[] args) {
 		

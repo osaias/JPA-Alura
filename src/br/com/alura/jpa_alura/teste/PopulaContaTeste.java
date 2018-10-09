@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import br.com.alura.jpa_alura.modelo.Conta;
 import br.com.alura.jpa_alura.util.JPAUtil;
 
-public class PopulaConta {
+public class PopulaContaTeste {
 
 	public static void main(String[] args) {
 

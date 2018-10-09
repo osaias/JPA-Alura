@@ -20,8 +20,8 @@ public class Conta {
 	private String banco;
 	private String titular;
 	
-	@OneToMany
-	private List<Conta> movimentacoes;
+	@OneToMany(mappedBy="conta")
+	private List<Movimentacao> movimentacoes;
 	
 	public int getId() {
 		return id;
@@ -63,11 +63,11 @@ public class Conta {
 		this.banco = banco;
 	}
 
-	public List<Conta> getMovimentacoes() {
+	public List<Movimentacao> getMovimentacoes() {
 		return movimentacoes;
 	}
 
-	public void setMovimentacoes(List<Conta> movimentacoes) {
+	public void setMovimentacoes(List<Movimentacao> movimentacoes) {
 		this.movimentacoes = movimentacoes;
 	}
 

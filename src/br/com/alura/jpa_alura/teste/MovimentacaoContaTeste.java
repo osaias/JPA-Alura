@@ -40,19 +40,20 @@ public class MovimentacaoContaTeste {
 		//persistindo uma movimentação com uma conta existente
 		Movimentacao mov = new Movimentacao();
 		mov.setData(Calendar.getInstance());
-		mov.setDescricao("Pagamento em Debito");
-		mov.setTipo(TipoMovimentacao.SAIDA);
-		mov.setValor(new BigDecimal("20.0"));
+		mov.setDescricao("Pagamento em Credito");
+		mov.setTipo(TipoMovimentacao.ENTRADA);
+		mov.setValor(new BigDecimal("1000.0"));
 		
 		EntityManager manager = JPAUtil.getEntityManager("jpa_alura");
 		manager.getTransaction().begin();
 		
-		Conta conta = manager.find(Conta.class, 6);
+		Conta conta = manager.find(Conta.class, 4);
 		mov.setConta(conta);
 		
 		manager.persist(mov);
 		manager.getTransaction().commit();
 		manager.close();
+		JPAUtil.getFactory().close();
 
 	}
 
