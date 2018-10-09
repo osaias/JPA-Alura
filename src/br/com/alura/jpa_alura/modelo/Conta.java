@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 //@SequenceGenerator(name = "SEQ_CONTAS", sequenceName = "SEQ_CONTAS", initialValue = 1)
@@ -19,6 +20,7 @@ public class Conta {
 	private String banco;
 	private String titular;
 	
+	@OneToMany
 	private List<Conta> movimentacoes;
 	
 	public int getId() {
@@ -61,6 +63,13 @@ public class Conta {
 		this.banco = banco;
 	}
 
+	public List<Conta> getMovimentacoes() {
+		return movimentacoes;
+	}
+
+	public void setMovimentacoes(List<Conta> movimentacoes) {
+		this.movimentacoes = movimentacoes;
+	}
 
 	@Override
 	public String toString() {
